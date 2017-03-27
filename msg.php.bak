@@ -1,0 +1,14 @@
+<?php 
+	$firstName=$_POST['first'];
+	$lastName=$_POST['last'];
+	$email=$_POST['email'];
+	$phoneNumber=$_POST['phone'];
+	$subject=$_POST['subject'];
+	$message=$_POST['message'];
+	$str="firstName:".$firstName."  lastName:".$lastName."  email:".$email."  phoneNumber:".$phoneNumber."  subject:".$subject."  message:".$message."\r\n";
+	$compile_dir = "./msg.txt"; 
+	$file = fopen($compile_dir,"a"); 
+	fwrite($file,$str); 
+	fclose($file);
+	echo "thank you! We will deal with your opinion as soon as possible."
+; ?>

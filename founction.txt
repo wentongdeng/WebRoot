@@ -1,0 +1,34 @@
+//get the type of file
+function getType1($downCount){
+	$downCount=intval($downCount);
+	$xmldoc=new DOMDocument();  
+	$xmldoc->load("countFile.xml");
+	$files=$xmldoc->getElementsByTagName('file');
+	$file=$files->item($downCount);
+	$fileNode=$file->getElementsByTagName("type");
+	$fileType=$fileNode->item(0)->nodeValue;
+	$fileType=strval($fileType);
+	$fileType=trim($fileType);
+	return $fileType;
+}
+
+// get the ip of user
+function getIpAddress($ip=""){  
+	$url = "http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js";
+	if($ip!="")$url .= "&ip=".$ip;
+    $ipContent   = file_get_contents($url);  
+    $jsonData = explode("=",$ipContent);    
+    $jsonAddress = substr($jsonData[1], 0, -1);  
+    return $jsonAddress;  
+}  
+//show the address of user ip 
+function showIpAddress($ip=""){
+	if($ip){
+		$cityArray = getIpAddress($ip); 
+		$city_json = json_decode($cityArray,TRUE);
+		$address = $city_json['country'].''.$city_json['province'].''.$city_json['city'];
+		return $address;  
+	}else{
+		return '';  
+	}
+} 

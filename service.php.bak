@@ -1,0 +1,15 @@
+<?php 
+	$ip=$_POST['ip'];
+	$country=$_POST['country'];
+	$province=$_POST['province'];
+	$city=$_POST['city'];
+	$district=$_POST['district'];
+	$isp=$_POST['isp'];
+	$type=$_POST['type'];
+	$info=$_POST['info'];
+	$content="ip地址：".$ip."  国家：".$country."  省份：".$city."  市：".$city."  区：".$district."  esp供应商类型：".$type."  其他：".$info."\r\n";
+	$compile_dir = "./usermsg.txt"; 
+	$file = fopen($compile_dir,"a"); 
+	fwrite($file,$content); 
+	fclose($file); 
+; ?>

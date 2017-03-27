@@ -1,0 +1,597 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Health Informatics Lab @ SIAT (Fengfeng Zhou)</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+</head>
+<body>
+<div id="sina_ip_info"></div>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+<script type="text/javascript">
+var uip = returnCitySN["cip"];
+$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip='+uip, function(_result){
+	if (remote_ip_info.ret == '1'){
+		var userMsg="ip: "+uip+"country: "+remote_ip_info.country+"  province: "+remote_ip_info.city+"  district: "+remote_ip_info.district+
+		"  isp: "+remote_ip_info.isp+"  type: "+remote_ip_info.type+"  other: "+remote_ip_info.desc;
+		var date = new Date();
+    	var seperator1 = "-";
+   		var seperator2 = ":";
+    	var year = date.getFullYear();
+    	var month = date.getMonth() + 1;
+    	var strDate = date.getDate();
+    	if (month >= 1 && month <= 9) {
+       	 	month = "0" + month;
+    	}
+   	 	if (strDate >= 0 && strDate <= 9) {
+        	strDate = "0" + strDate;
+    	}
+    	var currentdate = year + seperator1 + month + seperator1 + strDate
+            + " " + date.getHours() + seperator2 + date.getMinutes()
+            + seperator2 + date.getSeconds();
+        
+       var txt = "浏览器代码名: " + navigator.appCodeName + "  "; 
+       txt+= "浏览器名称: " + navigator.appName + "  "; 
+       txt+= "浏览器平台和版本: " + navigator.appVersion + "  "; 
+       txt+= "是否开启cookie: " + navigator.cookieEnabled + "  "; 
+       txt+= "操作系统平台: " + navigator.platform + "  ";
+       txt+= "User-agent头部值: " + navigator.userAgent + "  ";
+       var page="team";
+            
+		$.post("service.php",{usermsg:userMsg,date:currentdate,browse:txt,paGe:page
+		  });	 
+		
+	} else {
+		
+		alert('错误', '没有找到匹配的 IP 地址信息！');
+	}
+});
+</script>
+	<div id="header">	
+			<a href="index.html" class="logo"><img src="images/logo.png"></a>
+		<ul>
+			<li>
+				<a href="index.html">Introduction</a>
+			</li>
+			<li>
+				<a href="news.html">News</a>
+			</li>
+			<li>
+				<a href="publications.html">Publications</a>
+			</li>
+			<li>
+				<a href="resource.php">Resource</a>
+			</li>
+			<li class="selected">
+				<a href="team.html">Team</a>
+			</li>
+			
+			<li>
+				<a href="contact.html">Contact</a>
+			</li>
+			<li>
+				<a href="prephoto.html">photo</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="body">
+		<div class="sidebar">
+			<h3>contact</h3>
+			<ul>
+				<li>
+					<span class="address">address</span>
+					<ul>
+						<li>
+							Health Informatics Lab
+						</li>
+						<li>
+							 jilin province
+						</li>
+						<li>
+							changchun city
+						</li>
+						<li>
+							Hi-tech development zone
+						</li>
+						<li>
+							 2699 forward street
+						</li>
+						<li>
+							jilin university
+						</li>
+					</ul>
+				</li>
+				<li>
+					<span class="phone">telephone</span>
+					<ul>
+						<li>
+							18675591420
+						</li>
+					</ul>
+				</li>
+				<li>
+					<span class="email">email</span>
+					<ul>
+						<li>
+							<a href="ffzhou_hilab@qq.com">ffzhou_hilab@qq.com</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<span class="twitter">twitter</span>
+					<ul>
+						<li>
+							<a href="#">@mattovolumeone</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<span class="facebook">facebook</span>
+					<ul>
+						<li>
+							<a href="#">www.facebook/illumelabs</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="content">
+		<!-- 鏉ュ紶鍚堝奖 -->
+			<img src="images/team.jpg" alt="">
+			<h2>TEAMS</h2>
+			<h3>LEADER</h3>
+			<!-- -1 -->
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/ffzhou.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Fengfeng Zhou, Ph.D., Principal investigator<br/>
+						Professor,Research Center for Biomedical Information Technology,Institute of Biomedical and Health Engineering,Shenzhen Institutes of Advanced Technology,
+						Chinese Academy of Sciences.<br/>
+						Shenzhen, Guangdong, P.R. China, 518055.
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_ffengzhou.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage </a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<h3>Ph.D Candidates</h3>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/ren.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Ding Di is interested in computer application technology, especially in interdiscipline subject.
+					    She is also fond of Math, and has good academic performance in her major.
+					    Good at reading and writing, she does well in English and has passed CET4.<br/>						
+						<br/><br/>
+						<br/>
+						<br/>
+						<a href="member_renjy.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<!-- 3 -->
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/fen.png" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Fengfeng Zhou, Ph.D., Principal investigator<br/>
+						Professor,Research Center for Biomedical Information Technology,Institute of Biomedical and Health Engineering,Shenzhen Institutes of Advanced Technology,
+						Chinese Academy of Sciences.<br/>
+						Shenzhen, Guangdong, P.R. China, 518055.
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_fenxin.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<h3>visiting scholar</h3>
+			<!-- 2 -->
+			<h3>Master degree candidate</h3>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/zhangyx.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Fengfeng Zhou, Ph.D., Principal investigator<br/>
+						Professor,Research Center for Biomedical Information Technology,Institute of Biomedical and Health Engineering,Shenzhen Institutes of Advanced Technology,
+						Chinese Academy of Sciences.<br/>
+						Shenzhen, Guangdong, P.R. China, 518055.
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_zhangyx.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage </a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/zheng.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Weiwei Zheng, Graduate student of Jilin University, Shangqiu, Henan
+						
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_zhengww.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/liu.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						ShuaiLiu, graduated student of Jilin University,Gongzhuling, Jilin Province.
+						<br/><br/><br/><br/>
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_liush.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage </a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/li.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Fengfeng Zhou, Ph.D., Principal investigator<br/>
+						Professor,Research Center for Biomedical Information Technology,Institute of Biomedical and Health Engineering,Shenzhen Institutes of Advanced Technology,
+						Chinese Academy of Sciences.<br/>
+						Shenzhen, Guangdong, P.R. China, 518055.
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_lifei.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage </a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/liuyang.png" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Yang Liu, graduated student of Jilin University, Qiqihar, Heilongjiang Province.
+						<br/><br/><br/><br/>
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_liuyang.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<h3>undergraduate</h3>
+			<!-- 4 -->
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/yang.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Shuhan Yang, Undergraduate student of Jilin University, Liaoyuan, Jilin Province
+						<br/><br/><br/><br/>
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_yangshh.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage </a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<!-- 5 -->
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/weizhp.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Zhipeng Wei,an undergraduate,will graduate form JiLin University with bachelor degree in pharmaceutical engineering next year,
+						now in the study of biocomputing and bioinformatics.
+						<br/><br/>
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_weizhp.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage </a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<!-- 6 -->
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/gaoxq.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Gaoxiaoqian, Studying in Hebei university of technology computer science and software college,
+						 majoring in computer science and technology. Echo will be a graduate student, 
+						 studying in Jilin university, Changchun, Jilin, China, and she will major in data mining, machine learing,
+						  health data analysis, etc. the more diligent, the more luckier you are.
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_gaoxq.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage </a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<!-- 7 -->
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/pang.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Pan Zichen, Student of Software College,Jilin University
+						<br/><br/><br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_pangzch.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage </a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<!-- 8 -->
+			
+			<!-- 9 -->
+			
+			<!-- 10 -->
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/logo.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Fengfeng Zhou, Ph.D., Principal investigator<br/>
+						Professor,Research Center for Biomedical Information Technology,Institute of Biomedical and Health Engineering,Shenzhen Institutes of Advanced Technology,
+						Chinese Academy of Sciences.<br/>
+						Shenzhen, Guangdong, P.R. China, 518055.
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_dengwt.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<!-- 11 -->
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/zhao.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Fengfeng Zhou, Ph.D., Principal investigator<br/>
+						Professor,Research Center for Biomedical Information Technology,Institute of Biomedical and Health Engineering,Shenzhen Institutes of Advanced Technology,
+						Chinese Academy of Sciences.<br/>
+						Shenzhen, Guangdong, P.R. China, 518055.
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_zhaoxr.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage </a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			
+			<!-- 0 -->
+			
+			<!-- 1 -->
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/dingdi.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Ding Di is interested in computer application technology, especially in interdiscipline subject. She is also fond of Math, and has good academic performance in her major. Good at reading and writing, she does well in English and has passed CET4.
+						As an industrious and studious student, Ding Di learns some relevant courses online during her spare time. She hopes to take part in science research programs related to Health big data and can take advantage of these data to help solve medical problems.
+						
+						<br/>
+						<br/>
+						<a href="member_dingdi.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/xiaxin.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Maggie , undergraguate student of Jilin University,Changchun,China
+						Research Experience：Big Data in Jilin University by the lead of Professor Zhou,2016
+						Inter Experience : training base in Dalian Neusoft for one week in the summer of 2016
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_xiaxin.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/zhangyd.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Fengfeng Zhou, Ph.D., Principal investigator<br/>
+						Professor,Research Center for Biomedical Information Technology,Institute of Biomedical and Health Engineering,Shenzhen Institutes of Advanced Technology,
+						Chinese Academy of Sciences.<br/>
+						Shenzhen, Guangdong, P.R. China, 518055.
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member_zhangyd.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/ffzhou.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Fengfeng Zhou, Ph.D., Principal investigator<br/>
+						Professor,Research Center for Biomedical Information Technology,Institute of Biomedical and Health Engineering,Shenzhen Institutes of Advanced Technology,
+						Chinese Academy of Sciences.<br/>
+						Shenzhen, Guangdong, P.R. China, 518055.
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member16.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/ffzhou.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Fengfeng Zhou, Ph.D., Principal investigator<br/>
+						Professor,Research Center for Biomedical Information Technology,Institute of Biomedical and Health Engineering,Shenzhen Institutes of Advanced Technology,
+						Chinese Academy of Sciences.<br/>
+						Shenzhen, Guangdong, P.R. China, 518055.
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member17.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			<table  style="table-layout:fixed"> 
+				<tr>
+					<td>
+						<img src="images/ffzhou.jpg" height="160" width="100">
+					</td>
+					<td>
+					<div class="team">
+						Fengfeng Zhou, Ph.D., Principal investigator<br/>
+						Professor,Research Center for Biomedical Information Technology,Institute of Biomedical and Health Engineering,Shenzhen Institutes of Advanced Technology,
+						Chinese Academy of Sciences.<br/>
+						Shenzhen, Guangdong, P.R. China, 518055.
+						
+						<br/>
+						<br/>
+						<br/>
+						<a href="member18.html" style="text-decoration:none;"><img src="images/right.png" height="20" width="30" ></img> ckick here to personal homepage</a>
+					</div>
+					</td>
+				</tr>
+			
+			</table>
+			
+		</div>
+	</div>
+	<div id="footer">
+		<div>
+			<p>
+				<span>2016 &copy; Health Informatics Lab Center.</span><a href="#" >Terms of Service</a> | <a href="#" >Privacy Policy</a>
+			</p>
+			<ul>
+				<li id="facebook">
+					<a href="#">facebook</a>
+				</li>
+				<li id="twitter">
+					<a href="#">twitter</a>
+				</li>
+				<li id="googleplus">
+					<a href="#">googleplus</a>
+				</li>
+				<li id="rss">
+					<a href="#" >rss</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

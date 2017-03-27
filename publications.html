@@ -1,0 +1,572 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<title>Health Informatics Lab @ SIAT (Fengfeng Zhou)</title>
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	
+</head>
+<body>
+<div id="sina_ip_info"></div>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+<script type="text/javascript">
+var uip = returnCitySN["cip"];
+$.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip='+uip, function(_result){
+	if (remote_ip_info.ret == '1'){
+		var userMsg="ip: "+uip+"country: "+remote_ip_info.country+"  province: "+remote_ip_info.city+"  district: "+remote_ip_info.district+
+		"  isp: "+remote_ip_info.isp+"  type: "+remote_ip_info.type+"  other: "+remote_ip_info.desc;
+		var date = new Date();
+    	var seperator1 = "-";
+   		var seperator2 = ":";
+    	var year = date.getFullYear();
+    	var month = date.getMonth() + 1;
+    	var strDate = date.getDate();
+    	if (month >= 1 && month <= 9) {
+       	 	month = "0" + month;
+    	}
+   	 	if (strDate >= 0 && strDate <= 9) {
+        	strDate = "0" + strDate;
+    	}
+    	var currentdate = year + seperator1 + month + seperator1 + strDate
+            + " " + date.getHours() + seperator2 + date.getMinutes()
+            + seperator2 + date.getSeconds();
+        
+       var txt = "浏览器代码名: " + navigator.appCodeName + "  "; 
+       txt+= "浏览器名称: " + navigator.appName + "  "; 
+       txt+= "浏览器平台和版本: " + navigator.appVersion + "  "; 
+       txt+= "是否开启cookie: " + navigator.cookieEnabled + "  "; 
+       txt+= "操作系统平台: " + navigator.platform + "  ";
+       txt+= "User-agent头部值: " + navigator.userAgent + "  ";
+       var page="publications";
+            
+		$.post("service.php",{usermsg:userMsg,date:currentdate,browse:txt,paGe:page
+		  });	 
+		
+	} else {
+		
+		alert('错误', '没有找到匹配的 IP 地址信息！');
+	}
+});
+</script>
+	<div id="header">	
+			<a href="index.html" class="logo"><img src="images/logo.png"></a>
+		<ul>
+			<li>
+				<a href="index.html">Introduction</a>
+			</li>
+			<li>
+				<a href="news.html">News</a>
+			</li>
+			<li  class="selected">
+				<a href="publications.html">Publications</a>
+			</li>
+			<li>
+				<a href="resource.php">Resource</a>
+			</li>
+			<li>
+				<a href="team.html">Team</a>
+			</li>
+			
+			<li>
+				<a href="contact.html">Contact</a>
+			</li>
+			<li>
+				<a href="photo.html">photo</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="body">
+		<ul>
+			
+			<li>
+					<h3 class="title">Conference papers</h3>
+					<div class="resourcetop" style="color:#804040;">
+						<p>1.	Manli Zhou, Youxi Luo, Guoqin Mai, and Fengfeng Zhou#. 
+						"cLP: Linear Programming with Biological Constraints and its Application in Classification Problems". 
+						The 8th International Conference on Systems Biology, 
+						and The 4th Translational Bioinformatics Conference, October 24-27, 2014.</p>
+					</div>
+
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+					<p>2.	Manli Zhou*, Youxi Luo*, Guoqin Mai, and Fengfeng Zhou#. "Constraint Programming based Biomarker Optimization". 
+					The Sixth National Bioinformatics and Systems Biology Conference, October 6-9, 2014. 
+					Recommended for BioMed Research International.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>3.	Miaomiao Zhao*, Guoqin Mai*, Zhao Zhang*,  Youxi Luo, Fengfeng Zhou#, 
+						“Echo: Evolutionary CHaracterization of SREBP binding mOtifs”, 
+						17th Annual International Conference on Research in Computational Molecular Biology (RECOMB) Workshop on Massively Parallel Sequencing,
+						 April 11-12, 2013.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>4.	Miaomiao Zhao, Zhao Zhang, Guoqin Mai, Youxi Luo, Fengfeng Zhou#, “Echo: Evolutionary CHaracterization 
+							of fixed-length biological sequence mOtifs”, 17th Annual International Conference on Research in
+							Computational Molecular Biology (RECOMB) April 7-10, 2013.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>5.	Po-Yen Wu, John H Phan, Fengfeng Zhou, May D Wang, “Evaluation of 
+						normalization methods for RNA-Seq 
+						gene expression estimation”, IEEE International 
+						Conference on Bioinformatics and Biomedicine Workshops (BIBMW), 2011:50-57.</p>
+					</div>
+			</li>
+			<li>
+			<h3 class="title">Journal papers</h3>
+				<div class="resource" style="color:#804040;">
+						
+						<p>6.	Ruiquan Ge, Guoqin Mai, Pu Wang, Manli Zhou, Youxi Luo,
+							Yunpeng Cai, Fengfeng Zhou#. “CRISPRdigger: detecting CRISPRs with 
+							better direct repeat annotations”. Accepted by Scientific Reports. 2016.</p>
+					</div>
+			</li>
+			<li>
+				
+					<div class="resource" style="color:#804040;">
+						<p>7.	Dongli Ma, Shan Zhong, Xiaorong Liu, Huirong Mai, Guoqin Mai,
+						 	Cheng Xu, Fengfeng Zhou#. “CD3D and PRKCQ work together to discriminate
+						    between B-cell and T-cell acute lymphoblastic leukemia”. Accepted by
+						   	Computers in Biology and Medicine, 2016.</p>
+					</div>
+					
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>8.	Guoqin Mai, Ruiquan Ge, Guoquan Sun, Qinghan Meng, Fengfeng Zhou#. 
+						“A comprehensive curation shows the dynamic evolutionary patterns of prokaryotic
+						 CRISPRs”. Accepted by BioMed Research International, 2016.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>9.	Ruiquan Ge, Manli Zhou, Youxi Luo, Qinghan Meng, Guoqin Mai, Dongli Ma,
+						 Guoqing Wang, Fengfeng Zhou#. "McTwo: a two-step feature selection algorithm based 
+						 on maximal information coefficient ". BMC Bioinformatics 17: 142, 2016.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>10.	Miaomiao Zhao, Yunpeng Cai, Jiankui He, Guanyu Wang, Dongqing Wei,
+						 Yanjie Wei, Caiwan Zhang, Fengfeng Zhou#. “Personalized clinical data screening: 
+						 Special issue on health informatics”. Computers in Biology and Medicine, 61: 161-162, 2015.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>11.	Bin Liu, Jikui Liu, Guoqing Wang, Fan Li, Yang Zheng, Fengfeng Zhou#. 
+						"A Novel Electrocardiogram Parameterization Algorithm and its Application 
+						in Myocardial Infarction Detection". Computers in Biology and Medicine 61: 178-184, 2015.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>12.	Miaomiao Zhao, Zhao Zhang, Guoqin Mai, Youxi Luo, Fengfeng Zhou#. "jEcho: 
+						an Evolved weight vector to CHaracterize the protein's post-translational modification mOtifs".
+						Interdisciplinary Sciences: Computational Life Sciences, 7:194-199, 2015.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>13.	Wei Du, Zhongbo Cao, Yan Wang, Fengfeng Zhou, Wei Pang, Xin Chen, Yuan Tian, Yanchun Liang.
+						 “Specific Biomarkers: Detection of Cancer Biomarkers Through High-Throughput Transcriptomics Data”.
+						  Cognitive Computation 7 (6), 652-666, 2015.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>14.	Manli Zhou*, Youxi Luo*, Guoquan Sun, Guoqin Mai, Fengfeng Zhou#. "Constraint Programming
+						based Biomarker Optimization". BioMed Research International, 910515, 2015.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>15.	Zhao Zhang*, Miaomiao Zhao*, Guoqin Mai, Youxi Luo, Ze Wang, Fengfeng Zhou#. "Evolutionary 
+						optimization of transcription factor binding motif detection". Advances in Experimental Medicine
+						 and Biology, 827: 261-274, 2015.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>16.	Jiao Xie, Fengfeng Zhou, Guangyu Xu, Guoqin Mai, Jie Hu, Guoqing Wang, Fan Li.
+						 “Genome-wide screening of pathogenicity islands in Mycobacterium tuberculosis based 
+						 on the genomic barcode visualization”. Molecular Biology Reports 41(9):5883-5889, 2014.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>17.	Weihua Pan, Yanan Zhao, Yun Xu# and Fengfeng Zhou#. "WinHAP2: an extremely fast
+						 haplotype phasing program for long genotype sequences".
+						  BMC Bioinformatics 15(1):164, 2014.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>18.	Bin Liu, Xiaotian Zhang, Honglan Huang, Ying Zhang, Fengfeng Zhou#, Guoqing Wang#. 
+						"A novel molecular typing method of Mycobacteria based on DNA barcoding visualization".
+						 Journal of Clinical Bioinformatics 4 (1), 4, 2014.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>19.	Pi Guo*, Youxi Luo*, Guoqin Mai, Ming Zhang, Guoqing Wang#, Miaomiao Zhao, 
+						Liming Gao, Fan Li, Fengfeng Zhou#. "Gene Expression Profile based Classification
+						 Models of Psoriasis". Genomics, 103 (1), 48-55, 2014.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>20.	Adi L. Tarca, Mario Lauria, Michael Unger, Erhan Bilal, Stephanie Boue, Kushal Kumar Dey, 
+						Julia Hoeng, Heinz Koeppl, Florian Martin, Pablo Meyer, Preetam Nandy, Raquel Norel, Manuel Peitsch,
+						Jeremy J. Rice, Roberto Romero, Gustavo Stolovitzky, Marja Talikka, Yang Xiang, Christoph Zechner and 
+						IMPROVER DSC Collaborators. "Strengths and limitations of microarray-based phenotype prediction: lessons 
+						learned from the IMPROVER Diagnostic Signature Challenge". Bioinformatics 29(22), 2892-2899, 2013.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>21.	Meixue Yang, Bin Liu, Fan Li, Guoqing Wang#, Fengfeng Zhou#. "Normalizing electrocardiograms 
+						of both healthy persons and cardiovascular disease patients for biometric authentication". 
+						PLoS ONE, 8 (8), e71523, 2013.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>22.	Qilin Ma, Youxi Luo, Pi Guo, Gan Gao, Meixue Yang, Fengfeng Zhou#. “Clinical effects 
+							of Xinmailong therapy in patients with chronic heart failure”. International Journal of Medical Sciences, 
+							10(5):624-633, 2013.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>23.	Gaurav Sablok, XianMing Wu, Kinshuk Chandra Nayak, Jimmy Kuo, Vesselin Baev, Fengfeng Zhou.
+						 “Combinational effect of mutational bias and translational selection for translation efficiency in tomato 
+						 (Solanum lycopersicum) cv. Micro-Tom”. Genomics, 101(5):290-295, 2013.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>24.	Kaishi Li, Meixue Yang, Gaurav Sablok, Jianping Fan#, Fengfeng Zhou#. “Screening features to improve 
+						the class prediction of acute myeloid leukemia and myelodysplastic syndrome”, Gene, 512:348-354, 2013.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>25.	Yun Xu#, Wenhua Cheng, Pengyu Nie, Fengfeng Zhou#. “WinHAP: an Efficient Haplotype Phasing 
+						Algorithm based on Scalable Sliding Windows”. PLoS ONE, 7(8):e43163, 2012.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>26.	Fengfeng Zhou*, Qin Ma*, Guojun Li, Ying Xu. “QServer: A Biclustering Server for Prediction 
+						and Assessment of Co-Expressed Gene Clusters”, PLoS ONE 7(3):e32660, 2012.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>27.	Guoqing Wang, Fengfeng Zhou, Victor Olman, Yingying Su, Ying Xu, Fan Li, “Computational 
+						prediction and experimental validation of novel markers for detection of STEC O157:H7”, 
+						World Journal of Gastroenterology, 17(14):1910-1914, 2011.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>28.	Phuongan Dam, Irina Kataeva, Sung-Jae Yang, Fengfeng Zhou, Yanbin Yin, Wenchi Chou, Farris L.,
+						 Poole II, Janet Westpheling, Robert Hettich, Richard Giannone, Derrick L. Lewis, Robert Kelly, Harry J.
+						  Gilbert, Bernard Henrissat, Ying Xu and Michael W.W. Adams, "Insights into Plant Biomass Conversion from 
+						  the Genome of the Anaerobic Thermophilic Bacterium Caldicellulosiruptor bescii DSM 6725", Nucleic Acids Research,
+						   2011 39(8):3240-3254.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>29.	Fengfeng Zhou, Ying Xu, “cBar: a computer program to distinguish plasmid-derived from chromosome-derived 
+						sequence fragments in metagenomics data”, Bioinformatics 2010 26: 2051-2052. </p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>30.	Guoqing Wang, Fengfeng Zhou, Victor Olman, Fan Li, Ying Xu, “Prediction of pathogenicity islands in 
+						enterohemorrhagic Escherichia coli O157:H7 using genomic barcodes”, FEBS Letters 2010 584(1):194-198.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>31.	Fengfeng Zhou, Huiling Chen, Ying Xu, "GASdb: a large-scale and comparative exploration database
+						 of glycosyl hydrolysis systems", BMC Microbiology 2010 10:69. </p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>32.	Fengfeng Zhou and Ying Xu, "Large scale analyses of glycosylation in cellulases", 
+						Genomics, Proteomics & Bioinformatics 2009 7(4):194-199.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>33.	Fenglou Mao, Yanbin Yin, Fengfeng Zhou, Wen-Chi Chou, Chan Zhou, Huiling Chen, Ying Xu,
+						 "pDAWG: An Integrated Database for Plant Cell Wall Genes", 
+						 BioEnergy Research 2009 2(4):209-216.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>34.	Thao Tran, Fengfeng Zhou, Sarah Marshburn, Mark Stead, Sidney Kushner, and Ying Xu,
+						 "De novo computational prediction of non-coding RNA genes in prokaryotic genomes", 
+						 Bioinformatics 2009 25(22):2897-2905.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>35.	Irina A Kataeva, Sung-Jae Yang, Phuongan Dam, Farris L Poole II, Yanbin Yin, Fengfeng Zhou,
+						 Wen-chi Chou, Ying Xu, Lynne Goodwin, David R Sims, John C Detter, Loren J Hausser, Janet Westpheling 
+						 and Michael WW Adams, " Genome Sequence of the Anaerobic, Thermophilic, and Cellulolytic Bacterium
+						  "Anaerocellum thermophilum" DSM 6725", Journal of Bacteriology 2009 191:3760-3761.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>36.	Yong Chen*, Fengfeng Zhou*, Guojun Li, and Ying Xu, " MUST: A system for identification of miniature
+						inverted-repeat transposable elements and applications to Anabaena variabilis and Haloquadratum walsbyi",
+						 Gene 2009 436:1-7.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>37.	Bin Liu, Fengfeng Zhou, Suijie Wu, Ying Xu and Xiaobo Zhang, "Genomic and Proteomic Characterization of
+						 a Thermophilic Geobacillus Bacteriophage GBSV1", 
+						 Research in Microbiology 2009 160:166-171.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>38.	Chan Zhou, Fengfeng Zhou, Ying Xu, "Comparative analyses 
+						of distributions and functions of Z-DNA in Arabidopsis and rice",
+						 Genomics 2009 93:383-391.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>39.	Fengfeng Zhou, Ying Xu, “RepPop: a database for repetitive elements in 
+						Populus trichocarpa”, BMC Genomics 2009 10:14.	</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>40.	Fengfeng Zhou*, Victor Olman*, Ying Xu, “Barcodes for Genomes and Applications”,
+						 BMC Bioinformatics 2008 9:546.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>41.	Yong Chen*, Fengfeng Zhou*, Guojun Li, and Ying Xu, "A recently active miniature
+						 inverted-repeat transposable element, Chunjie, inserted into an operon without disturbing 
+						 the operon structure in Geobacter uraniireducens Rf4", Genetics 2008 179: 2291-2297.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>42.	Fengfeng Zhou, Victor Olman, Ying Xu, "Insertion Sequences show diverse recent activities
+						 in Cyanobacteria and Archaea", 
+						 BMC Genomics, 2008 9:36.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>43.	Fengfeng Zhou, Thao Tran, Ying Xu, "Nezha, a novel active miniature inverted-repeat transposable 
+						element in cyanobacteria", 
+						Biochemical and Biophysical Research Communications 2008 365(4):790-794.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>44.	Miaomiao Zhao, Yunpeng Cai, Jiankui He, Guanyu Wang, Dongqing Wei,
+						 Yanjie Wei, Caiwan Zhang, Fengfeng Zhou#. “Personalized clinical data screening: 
+						 Special issue on health informatics”. Computers in Biology and Medicine, 61: 161-162, 2015.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>45.	Fengfeng Zhou*, Yu Xue*, Xuebiao Yao, Ying Xu, "A general user interface for
+						 prediction servers of proteins'; post-translational modification sites ", 
+						 Nature Protocols 2006 1(3):1318-1321. </p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>46.	Yu Xue*, Fengfeng Zhou*, Chuanhai Fu, Ying Xu, Xuebiao Yao, 
+						"SUMOsp: a web server for sumoylation site prediction", 
+						Nucleic Acids Research 2006 34:W254-W257. </p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>47.	Fengfeng Zhou*, Yu Xue*, Xuebiao Yao, Ying Xu, "CSS-Palm: 
+						Palmitoylation Site Prediction with a Clustering and Scoring Strategy 
+						(CSS)", Bioinformatics 2006 22(7):894-896.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>48.	Fengfeng Zhou*, Yu Xue*, Hualei Lu, Guoliang Chen, Xuebiao Yao, 
+						"A genome-wide analysis of sumoylation-related biological processes and 
+						functions in human nucleus", FEBS Letters 2005 579: 3369-3375.</p> 
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>49.	Yu Xue*, Fengfeng Zhou*, Minjie Zhu, Kashif Ahmed, Guoliang Chen,
+						 Xuebiao Yao, "GPS: A comprehensive www server for phosphorylation sites
+						  prediction", Nucleic Acids Research 2005 33: W184-W187.</p> 
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>50.	Zuozhou Chen, Chenghai Xue, Sheng Zhu, Fengfeng Zhou, Xuefeng Bruce Ling, 
+						Guoping Liu, Liangbiao Chen, "GoPipe: Streamlined Gene Ontology Annotation for
+						 Batch Anonymous Sequences with Statistics", Progress in Biochemistry and Biophysics 2005 32:187-191.</p>  
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>51.	Fengfeng Zhou, Yinlong Xu, Guoliang Chen, "No-wait Scheduling 
+						in Single-hop Multi-channel LANs", Information Processing Letters 2005 93:19-24.</p>  
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>52.	Fengfeng Zhou*, Yu Xue*, Guoliang Chen, Xuebiao Yao, "GPS: A Novel Group-based
+						 Phosphorylation Predicting and Scoring Method", Biochemical and Biophysical 
+						 Research Communications 2004 325:1443-1448.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>53.	Fengfeng Zhou, Guoliang Chen, Yinlong Xu, J. Gu, "Minimizing ADMs on WDM Directed Fiber Trees",
+						 J. Comput. Sci. & Technol. 2003 18(6):725-731.</p>
+					</div>
+			</li>
+			<li>
+			<h3 class="title">Journal papers in Chinese</h3>
+				<div class="resource" style="color:#804040;">
+						
+						<p>54.	Kaishi Li, Jianping Fan#, Fengfeng Zhou#. “Early Diagnosis Algorithms for ICU Emergencies”
+						 (in Chinese), Integrative Technology, Special Issue on Health Informatics, 2012, 1(2):13-19.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>55.	Fengfeng Zhou, Yinlong Xu, Guoliang Chen, "A Scheduling Algorithm on Symmetric Fiber Trees 
+						with Tunable ADMs", (in Chinese), Journal of Computer Science 2005 28:774-781.</p>  
+					</div>
+			</li>
+			<li>
+			<h3 class="title">Non-peer-reviewed papers</h3>
+				<div class="resource" style="color:#804040;">
+						
+						<p>56.	Yu Xue, Fengfeng Zhou, Ying Xu and Xuebiao Yao, "GPS: A computational protocol 
+						for kinase-specific phosphorylation site prediction", 
+						Nature Protocols, 2007 (invited).</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>57.	Fengfeng Zhou, Guoliang Chen, Yinlong Xu, "Construction of
+						 Small Worlds in the Physical Topology of Wireless Networks",arXiv:cs.NI/0503051, 2005.</p>
+					</div>
+			</li>
+			<li>
+				<div class="resource" style="color:#804040;">
+						
+						<p>58.	Yu Xue*, Fengfeng Zhou*, Hualei Lu, Guoliang Chen, Xuebiao Yao, 
+						"SUMO Substrates and Sites Prediction Combining Pattern Recognition 
+						and Phylogenetic Conservation", arXiv:q-bio.GN/0409011, 2004.</p>
+					</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div id="footer">
+		<div>
+			<p>
+				<span>2016 &copy; Illumelabs Diagnostic Center.</span><a href="#" >Terms of Service</a> | <a href="#" >Privacy Policy</a>
+			</p>
+			<ul>
+				<li id="facebook">
+					<a href="#">facebook</a>
+				</li>
+				<li id="twitter">
+					<a href="#">twitter</a>
+				</li>
+				<li id="googleplus">
+					<a href="#">googleplus</a>
+				</li>
+				<li id="rss">
+					<a href="#" >rss</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
